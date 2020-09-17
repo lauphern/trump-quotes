@@ -40,7 +40,7 @@ namespace TrumpQuotes.WebSite.Services
 
   // }
 
-  public class HttQuoteService
+  public class HttpQuoteService
   {
     static HttpClient client = new HttpClient();
 
