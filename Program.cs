@@ -14,8 +14,8 @@ namespace TrumpQuotes
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
             HttpQuoteService.ConnectApi();
+            CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
