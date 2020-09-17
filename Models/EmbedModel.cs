@@ -10,6 +10,8 @@ namespace TrumpQuotes.Models
 
       public Source[] Source { get; set; }
 
+      public override string ToString() => JsonSerializer.Serialize<Embed>(this);
+
     }
 
 }
