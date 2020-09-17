@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using trump_quotes.Models;
+using TrumpQuotes.Models;
 
-namespace trump_quotes.Controllers
+namespace TrumpQuotes.Controllers
 {
     public class HomeController : Controller
     {

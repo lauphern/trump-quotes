@@ -1,6 +1,6 @@
 using System;
 
-namespace trump_quotes.Models
+namespace TrumpQuotes.Models
 {
     public class QuoteModel
     {
