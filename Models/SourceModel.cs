@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace TrumpQuotes.Models
 {
-  
+
   public class Source
   {
 
