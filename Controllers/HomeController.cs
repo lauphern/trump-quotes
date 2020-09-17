@@ -21,15 +21,17 @@ namespace TrumpQuotes.Controllers
     }
 
     public HttpQuoteService QuoteService { get; }
-    public QuoteModel Quote { get; private set; }
+    public QuoteModel Quote { get; set; }
 
-    public void OnGet()
-    {
-      Quote = QuoteService.GetQuoteAsync().Result;
-    }
+    // public void OnGet()
+    // {
+    //   Quote = QuoteService.GetQuoteAsync().Result;
+    // }
     public IActionResult Index()
     {
-      return View();
+      Quote = QuoteService.GetQuoteAsync().Result;
+      var viewModel = Quote;
+      return View(viewModel);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
