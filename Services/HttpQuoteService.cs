@@ -68,7 +68,14 @@ namespace TrumpQuotes.WebSite.Services
       //TODO error handling
       if (response.IsSuccessStatusCode)
       {
-        quote = await response.Content.ReadAsAsync<QuoteModel>();
+        // quote = await response.Content.ReadAsAsync<QuoteModel>();
+        // https://www.thetopsites.net/article/52660492.shtml
+        string data = await response.Content.ReadAsStringAsync();
+        quote = JsonSerializer.Deserialize<QuoteModel>(data,
+            new JsonSerializerOptions
+            {
+              PropertyNameCaseInsensitive = true
+            });
         // quote = await response.Content.ReadAsAsync<string>();
       }
       return quote;
