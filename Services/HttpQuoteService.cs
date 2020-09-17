@@ -60,15 +60,24 @@ namespace TrumpQuotes.WebSite.Services
     //   return response.Headers.Location;
     // }
 
-    static async Task<QuoteModel> GetQuoteAsync(string path)
+    public async Task<QuoteModel> GetQuoteAsync()
     {
       QuoteModel quote = null;
-      HttpResponseMessage response = await client.GetAsync(path);
+      // string quote = null;
+      HttpResponseMessage response = await client.GetAsync("random/quote");
+      //TODO error handling
       if (response.IsSuccessStatusCode)
       {
         quote = await response.Content.ReadAsAsync<QuoteModel>();
+        // quote = await response.Content.ReadAsAsync<string>();
       }
       return quote;
+      // return new QuoteModel(quote);
+      // return JsonSerializer.Deserialize<QuoteModel>(quote,
+      //       new JsonSerializerOptions
+      //       {
+      //         PropertyNameCaseInsensitive = true
+      //       });
     }
 
     // static async Task<QuoteModel> UpdateProductAsync(QuoteModel product)
@@ -89,13 +98,8 @@ namespace TrumpQuotes.WebSite.Services
     //   return response.StatusCode;
     // }
 
-    static void Main()
-    {
-      RunAsync().GetAwaiter().GetResult();
-    }
-
     // static async Task RunAsync()
-    static void RunAsync()
+    public static void ConnectApi()
     {
       client.BaseAddress = new Uri("https://api.tronalddump.io/");
       client.DefaultRequestHeaders.Accept.Clear();
