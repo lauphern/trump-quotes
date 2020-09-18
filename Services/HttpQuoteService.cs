@@ -5,7 +5,9 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using TrumpQuotes.Models;
@@ -83,6 +85,14 @@ namespace TrumpQuotes.WebSite.Services
         // quote = await response.Content.ReadAsAsync<string>();
       }
       //TODO
+      // regex (\\n)*http.*
+      Regex rx = new Regex(@"(\\n)*http.*",
+          RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+      Type quoteType = typeof(QuoteModel);
+      PropertyInfo valueInstance = quoteType.GetProperty("Value");
+      valueInstance.SetValue(quote, rx.Replace(quote.Value, ""));
+      // string cleanQuote = Regex.Replace(quote, rx);
       //sometimes the quote value comes with a link
       //usar regex para ver algo que empiece con http y quitarlo (si hay link en source)
       return quote;
