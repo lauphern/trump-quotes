@@ -13,10 +13,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>@Model.Value</p>
-    @* <button onclick="@GetNewQuote()" data-toggle="modal" class="btn btn-primary">More Info</button> *@
-    @* <button onclick="@UpdateQuote()" data-toggle="modal" class="btn btn-primary">More Info</button> *@
-    @(await Html.RenderComponentAsync<NewQuoteBtn>(RenderMode.ServerPrerendered))
+    @(await Html.RenderComponentAsync<QuoteComponent>(RenderMode.Server))
     <script src="~/_framework/blazor.server.js"></script>
 </div>
 

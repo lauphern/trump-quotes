@@ -64,7 +64,11 @@ namespace TrumpQuotes.WebSite.Services
     {
       QuoteModel quote = null;
       // string quote = null;
-      HttpResponseMessage response = await client.GetAsync("random/quote");
+      // They use await with GetAsync in the official tutorial:
+      // https://docs.microsoft.com/es-es/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client
+      // But it wasn't working when I called it from the component
+      // Fix src: https://stackoverflow.com/questions/43148155/httpclient-getasync-not-working-as-expected
+      HttpResponseMessage response = client.GetAsync("random/quote").Result;
       //TODO error handling
       if (response.IsSuccessStatusCode)
       {

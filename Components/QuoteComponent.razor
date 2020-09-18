@@ -24,11 +24,17 @@ https://stackoverflow.com/questions/58196812/blazor-onclick-event-not-triggered 
     }
 } *@
 
-
+<p>@DisplayQuote().Result.Value</p>
 <button @onclick="GetNewQuote" data-toggle="modal" class="btn btn-primary">New quote</button>
 
 
 @code {
+
+    private async Task<QuoteModel> DisplayQuote()
+    {
+        var quote = await QuoteService.GetQuoteAsync();
+        return quote;
+    }
     private async Task<QuoteModel> GetNewQuote()
     {
         return await QuoteService.GetQuoteAsync();

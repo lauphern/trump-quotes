@@ -29,14 +29,9 @@ namespace TrumpQuotes.Controllers
     // }
     public IActionResult Index()
     {
-      Quote = QuoteService.GetQuoteAsync().Result;
-      var viewModel = Quote;
-      return View(viewModel);
-    }
-
-    public void UpdateQuote()
-    {
-      Quote = QuoteService.GetQuoteAsync().Result;
+      // Quote = QuoteService.GetQuoteAsync().Result;
+      // var viewModel = Quote;
+      return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
