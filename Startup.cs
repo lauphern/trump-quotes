@@ -24,7 +24,9 @@ namespace TrumpQuotes
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages();
             services.AddControllersWithViews();
+            services.AddServerSideBlazor();
             services.AddTransient<HttpQuoteService>();
         }
 
@@ -53,6 +55,9 @@ namespace TrumpQuotes
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+                endpoints.MapBlazorHub();
             });
         }
     }

@@ -78,6 +78,9 @@ namespace TrumpQuotes.WebSite.Services
             });
         // quote = await response.Content.ReadAsAsync<string>();
       }
+      //TODO
+      //sometimes the quote value comes with a link
+      //usar regex para ver algo que empiece con http y quitarlo (si hay link en source)
       return quote;
       // return new QuoteModel(quote);
       // return JsonSerializer.Deserialize<QuoteModel>(quote,

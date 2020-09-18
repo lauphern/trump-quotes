@@ -34,6 +34,11 @@ namespace TrumpQuotes.Controllers
       return View(viewModel);
     }
 
+    public void UpdateQuote()
+    {
+      Quote = QuoteService.GetQuoteAsync().Result;
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

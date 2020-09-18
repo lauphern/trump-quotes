@@ -1,0 +1,36 @@
+@using TrumpQuotes.Models
+@using TrumpQuotes.WebSite.Services
+@inject HttpQuoteService QuoteService
+@using System.Net.Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
+@* To make onclick events work:
+https://stackoverflow.com/questions/58368714/onclick-method-not-working-in-blazor-server-side-razor-component
+https://stackoverflow.com/questions/58196812/blazor-onclick-event-not-triggered *@
+
+@* <button class="btn btn-primary" @onclick="UpdateHeading">
+    @mytest
+</button>
+
+@code {
+    string mytest = "Update heading";
+    private void UpdateHeading()
+    {
+      mytest = "HOLA";
+    }
+} *@
+
+
+<button @onclick="GetNewQuote" data-toggle="modal" class="btn btn-primary">New quote</button>
+
+
+@code {
+    private async Task<QuoteModel> GetNewQuote()
+    {
+        return await QuoteService.GetQuoteAsync();
+    }
+}

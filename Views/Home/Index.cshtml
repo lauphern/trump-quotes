@@ -1,4 +1,12 @@
-﻿@model TrumpQuotes.Models.QuoteModel
+﻿@* @using TrumpQuotes.WebSite.Services *@
+@using TrumpQuotes.Components
+@* @using TrumpQuotes.Models *@
+@* @using TrumpQuotes.Controllers
+@using System.Web *@
+@* @model TrumpQuotes.Models.QuoteModel *@
+@* @inject HttpQuoteService QuoteService *@
+
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -6,5 +14,9 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>@Model.Value</p>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @* <button onclick="@GetNewQuote()" data-toggle="modal" class="btn btn-primary">More Info</button> *@
+    @* <button onclick="@UpdateQuote()" data-toggle="modal" class="btn btn-primary">More Info</button> *@
+    @(await Html.RenderComponentAsync<NewQuoteBtn>(RenderMode.ServerPrerendered))
+    <script src="~/_framework/blazor.server.js"></script>
 </div>
+
