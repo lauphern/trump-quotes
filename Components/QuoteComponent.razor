@@ -1,6 +1,6 @@
 @using TrumpQuotes.Models
 @using TrumpQuotes.WebSite.Services
-@inject HttpQuoteService QuoteService
+@* @inject HttpQuoteService QuoteService *@
 @using System.Net.Http
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
@@ -12,31 +12,24 @@
 https://stackoverflow.com/questions/58368714/onclick-method-not-working-in-blazor-server-side-razor-component
 https://stackoverflow.com/questions/58196812/blazor-onclick-event-not-triggered *@
 
-@* <button class="btn btn-primary" @onclick="UpdateHeading">
-    @mytest
-</button>
 
-@code {
-    string mytest = "Update heading";
-    private void UpdateHeading()
-    {
-      mytest = "HOLA";
-    }
-} *@
-
-<p>@DisplayQuote().Result.Value</p>
+<p>@Quote.Value</p>
 <button @onclick="GetNewQuote" data-toggle="modal" class="btn btn-primary">New quote</button>
 
 
 @code {
 
-    private async Task<QuoteModel> DisplayQuote()
+    private static async Task<QuoteModel> DisplayQuote()
     {
+        HttpQuoteService QuoteService = new HttpQuoteService();
         var quote = await QuoteService.GetQuoteAsync();
         return quote;
     }
-    private async Task<QuoteModel> GetNewQuote()
+
+    QuoteModel Quote = DisplayQuote().Result;
+    
+    private void GetNewQuote()
     {
-        return await QuoteService.GetQuoteAsync();
+        Quote = DisplayQuote().Result;
     }
 }
