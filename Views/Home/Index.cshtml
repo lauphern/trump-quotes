@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="d-flex flex-column align-items-center w-100 text-center">
     @(await Html.RenderComponentAsync<QuoteComponent>(RenderMode.Server))
     <script src="~/_framework/blazor.server.js"></script>
 </div>

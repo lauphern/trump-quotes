@@ -9,19 +9,19 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: --primary;
 }
 
-.btn-primary {
+/* .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
-}
+} */
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: --primary;
+  border-color: --primary;
 }
 
 /* Sticky footer styles
@@ -51,6 +51,14 @@ button.accept-policy {
   line-height: inherit;
 }
 
+#bg-copyright {
+  position: fixed;
+  bottom: 70px;
+  right: 2rem;
+  color: white;
+  font-size: 0.8rem;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -61,7 +69,18 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-image: url("../images/trump-library-of-congress-b&w.jpg");
+  background-size: 150%;
+  background-position: 100% 15%;
+
 }
+
+@media (max-width: 400px) {
+  body {
+    background-size: cover;
+  }
+}
+
 .footer {
   position: absolute;
   bottom: 0;

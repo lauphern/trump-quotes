@@ -14,8 +14,14 @@ https://stackoverflow.com/questions/58196812/blazor-onclick-event-not-triggered 
 
 @if(Quote != null)
 {
-    <div class="jumbotron jumbotron-fluid">
+    @* <div class="jumbotron jumbotron-fluid">
         <div class="container">
+            <p class="lead"><i class="fas fa-quote-left"></i>&nbsp;@(Quote.Value)&nbsp;<i class="fas fa-quote-right"></i></p>
+            <footer class="blockquote-footer"><a href="@Quote.Embedded.Source[0].Url" target="_blank">Source</a></footer>
+        </div>
+    </div> *@
+    <div class="shadow card reg-card vh-50 my-5">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
             <p class="lead"><i class="fas fa-quote-left"></i>&nbsp;@(Quote.Value)&nbsp;<i class="fas fa-quote-right"></i></p>
             <footer class="blockquote-footer"><a href="@Quote.Embedded.Source[0].Url" target="_blank">Source</a></footer>
         </div>
@@ -27,7 +33,7 @@ else
         <span class="sr-only">Loading...</span>
     </div><br>
 }
-<button @onclick="GetNewQuote" data-toggle="modal" class="btn btn-primary"><i class="fas fa-sync-alt"></i>&nbsp;New quote</button>
+<button @onclick="GetNewQuote" data-toggle="modal" class="btn btn-primary shadow-sm"><i class="fas fa-sync-alt"></i>&nbsp;New quote</button>
 
 
 @code {
