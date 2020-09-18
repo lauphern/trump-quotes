@@ -33,7 +33,6 @@ namespace TrumpQuotes.WebSite.Services
               PropertyNameCaseInsensitive = true
             });
       }
-      //TODO
       Regex rx = new Regex(@"(\\n)*http.*",
           RegexOptions.Compiled | RegexOptions.IgnoreCase);
 

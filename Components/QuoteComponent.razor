@@ -12,8 +12,21 @@ https://stackoverflow.com/questions/58368714/onclick-method-not-working-in-blazo
 https://stackoverflow.com/questions/58196812/blazor-onclick-event-not-triggered *@
 
 
-<p><i class="fas fa-quote-left"></i>&nbsp;@(Quote.Value)&nbsp;<i class="fas fa-quote-right"></i></p>
-<a href="@Quote.Embedded.Source[0].Url" target="_blank">Source</a><br>
+@if(Quote != null)
+{
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4"><i class="fas fa-quote-left"></i>&nbsp;@(Quote.Value)&nbsp;<i class="fas fa-quote-right"></i></h1>
+            <p class="lead"><a href="@Quote.Embedded.Source[0].Url" target="_blank">Source</a></p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="spinner-grow" role="status">
+        <span class="sr-only">Loading...</span>
+    </div><br>
+}
 <button @onclick="GetNewQuote" data-toggle="modal" class="btn btn-primary"><i class="fas fa-sync-alt"></i>&nbsp;New quote</button>
 
 
