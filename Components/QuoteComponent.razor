@@ -16,8 +16,8 @@ https://stackoverflow.com/questions/58196812/blazor-onclick-event-not-triggered 
 {
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4"><i class="fas fa-quote-left"></i>&nbsp;@(Quote.Value)&nbsp;<i class="fas fa-quote-right"></i></h1>
-            <p class="lead"><a href="@Quote.Embedded.Source[0].Url" target="_blank">Source</a></p>
+            <p class="lead"><i class="fas fa-quote-left"></i>&nbsp;@(Quote.Value)&nbsp;<i class="fas fa-quote-right"></i></p>
+            <footer class="blockquote-footer"><a href="@Quote.Embedded.Source[0].Url" target="_blank">Source</a></footer>
         </div>
     </div>
 }
