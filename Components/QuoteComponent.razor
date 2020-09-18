@@ -14,6 +14,7 @@ https://stackoverflow.com/questions/58196812/blazor-onclick-event-not-triggered 
 
 
 <p>@Quote.Value</p>
+<a href="@Quote.Embedded.Source[0].Url" target="_blank">Source</a><br>
 <button @onclick="GetNewQuote" data-toggle="modal" class="btn btn-primary">New quote</button>
 
 
