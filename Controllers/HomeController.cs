@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using TrumpQuotes.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -23,14 +19,8 @@ namespace TrumpQuotes.Controllers
     public HttpQuoteService QuoteService { get; }
     public QuoteModel Quote { get; set; }
 
-    // public void OnGet()
-    // {
-    //   Quote = QuoteService.GetQuoteAsync().Result;
-    // }
     public IActionResult Index()
     {
-      // Quote = QuoteService.GetQuoteAsync().Result;
-      // var viewModel = Quote;
       return View();
     }
 

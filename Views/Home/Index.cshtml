@@ -1,11 +1,4 @@
-﻿@* @using TrumpQuotes.WebSite.Services *@
-@using TrumpQuotes.Components
-@* @using TrumpQuotes.Models *@
-@* @using TrumpQuotes.Controllers
-@using System.Web *@
-@* @model TrumpQuotes.Models.QuoteModel *@
-@* @inject HttpQuoteService QuoteService *@
-
+﻿@using TrumpQuotes.Components
 
 @{
     ViewData["Title"] = "Home Page";
@@ -15,4 +8,3 @@
     @(await Html.RenderComponentAsync<QuoteComponent>(RenderMode.Server))
     <script src="~/_framework/blazor.server.js"></script>
 </div>
-
