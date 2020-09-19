@@ -43,5 +43,9 @@ $font-family-sans-serif: 'Manrope';
 
   &-primary {
     color: $white;
+
+    &:focus {
+      box-shadow: 0 0 4px #e96b02 !important;
+    }
   }
 }
