@@ -99,9 +99,11 @@ body {
 
 /* ----------- Animations ----------- */
 
-/* .card-body .lead {
-  opacity: 0;
-} */
+.lead i {
+  color: var(--primary);
+  font-size: 1.7rem;
+  margin: -0.5rem 1rem 0;
+}
 
 .fadeIn {
   animation: fadeIn 0.3s linear;
