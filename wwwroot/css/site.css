@@ -59,8 +59,10 @@ button.accept-policy {
   position: fixed;
   bottom: 70px;
   right: 2rem;
-  color: white;
+  color: var(--gray-900);
   font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25rem;
 }
 
 /* Sticky footer styles
