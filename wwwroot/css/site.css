@@ -85,7 +85,7 @@ body {
 @media (max-width: 400px) {
   body {
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: scroll; 
   }
 }
 
