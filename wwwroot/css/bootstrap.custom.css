@@ -7163,9 +7163,18 @@ a.text-dark:hover, a.text-dark:focus {
 
 .reg-card {
   width: 60% !important; }
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     .reg-card {
-      width: 80% !important; } }
+      width: 90% !important; } }
+  @media (max-width: 700px) {
+    .reg-card {
+      width: 80% !important; }
+      .reg-card .lead {
+        font-size: 1rem; } }
+  @media (max-width: 992px) {
+    .reg-card .card-body {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
 
 .github-link {
   color: #FB4D46 !important; }
@@ -7180,6 +7189,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 6rem;
   padding: 0.7rem 2rem; }
   .btn-primary {
-    color: #fff; }
+    color: #fff;
+    z-index: 2; }
     .btn-primary:focus {
       box-shadow: 0 0 4px #e96b02 !important; }
